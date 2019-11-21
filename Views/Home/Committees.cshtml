@@ -1,0 +1,63 @@
+﻿@model Assignment4_Elections.Models.Committees
+
+@{
+    ViewData["Title"] = "Committees";
+}
+
+
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<h2>Committees</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Committee Id</th>
+            <th>Committee type</th>
+            <th>Candidate Id</th>
+            <th>Party</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.results)
+        {
+
+            <tr>
+
+                <td>@Html.DisplayFor(modelItem => item.name)</td>
+                <td>@Html.DisplayFor(modelItem => item.committee_id)</td>
+                <td>@Html.DisplayFor(modelItem => item.committee_type_full)</td>
+                <td>@Html.DisplayFor(modelItem => item.candidate_ids)</td>
+                <td>@Html.DisplayFor(modelItem => item.party_full)</td>
+                <td>@Html.DisplayFor(modelItem => item.state)</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to Home</a>
+</div>
+
