@@ -39,7 +39,7 @@ namespace Assignment4_Elections.APIHandlerManager
         /// <returns></returns>
         public Candidates GetCandidates()
         {
-            string CANDIDATES_API_PATH = BASE_URL + "/candidates/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=name";
+            string CANDIDATES_API_PATH = BASE_URL + "/candidates/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=name&per_page=50";
             string candidatesData = "";
 
             Candidates candidates = null;
@@ -74,7 +74,7 @@ namespace Assignment4_Elections.APIHandlerManager
         }
         public Committees GetCommittees()
         {
-            string COMMITTEES_API_PATH = BASE_URL + "/committees/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=name";
+            string COMMITTEES_API_PATH = BASE_URL + "/committees/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=name&per_page=50";
             string committeesData = "";
 
             Committees committees = null;
