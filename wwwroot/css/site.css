@@ -1,37 +1,137 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
+﻿/* set body margins to 0, height to 100%*/
 body {
+    margin: 0;
+    height: 100%;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+/* style navbar logo / image */
+/* since navbar is 50px, let image be 40 and pad 5px on each side*/
+#navbar-logo {
+    display: inline-block;
+    padding: 5px;
+    height: 50px;
+}
+
+/* content div styling : pad at least 50px at the top to account for the navbar*/
+/* set width to 90% and center using auto margin to allow for blank space to left and right side*/
+.content {
+    margin: 0 auto;
     padding-top: 50px;
-    padding-bottom: 20px;
+    width: 90%;
+    /* set high value for height to test sticky navbar and back to top function*/
+    /*height: 2000px;*/
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+/* footer styling: just make sure it's 100% wide and text is center aligned horizontally and vertically (use padding) */
+.footer {
+    margin: 0 auto;
     width: 100%;
+    text-align: center;
+    padding: 24px 0px;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+/* same styling applies to links in footer and navbar */
+/* style navbar links ( div floats to the right with <span>s nested with <a> elements) */
+
+/* for the span elements that contain actual links: pad left and right, and make font a little larger (110%)*/
+.footer > span,
+#navbar-links > li {
+    padding: 0px 6px;
+    font-size: 1.1em;
+}
+/* finally, style the links. make dark green text, don't change color for visited link */
+.footer > span > a,
+#navbar-links > li > a {
+    color: #155115;
+    text-decoration: none;
+}
+/* when users hovers over link in the navbar, jsut make text lighter to indicate possible action*/
+.footer > span > a:hover,
+#navbar-links > li > a:hover {
+    color: #49d049;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+
+/* table contatiner, handle overflow (show scrollbars for x-axis overflow) and draw border */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 3px solid #bfbfbf;
+    padding: 6px 16px 24px 16px;
+}
+
+/* style table */
+table {
+    width: 100%;
+    text-align: left;
+    padding: 24px;
+    border-collapse: collapse;
+}
+
+/* bold bottom border for the table header row */
+table > thead > tr {
+    border-bottom: 2px solid black;
+}
+
+/* info-div class used to style html elements such as div and p that contain information */
+.info-div
+{
+    border: 3px solid #bfbfbf;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 24px;
+    line-height: 2;
+    margin: 10px 0px;
+    overflow: auto;
+}
+
+/* style image that will appear in text floated to the left */
+.intext-image-left {
+    border-radius: 4px; 
+    float: left; 
+    margin: 0px 12px 4px 0px;
+}
+
+/* style image that will appear in text floated to the right */
+.intext-image-right {
+    border-radius: 4px; 
+    float: right; 
+    margin: 0px 0px 4px 12px;
+}
+
+/* style avatar image */
+.avatar {
+    height: 160px;
+    width: 160px;
+    border: 1.5px solid #bfbfbf;
+    border-radius: 50%;
+}
+
+/* credit source span, italic font and smaller size (80% of what the normal font size would be) */
+.source-credit {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.page-header {
+    text-align: center;
+    font-weight: 800;
+}
+
+/* style button that scrolls the page to the top if user clicks it */
+#button-up {
+    display: none;  /*Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 4px; /* Place the button at the bottom of the page */
+    right: 8px; /* Place the button 8px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    padding: 8px; /* Some padding */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; 
+    border: 2px solid #cc0000;
+    background-color: #ff3333;
+    color: #ffffff;
+    opacity: 0.8; /*make it a little transparent*/
 }

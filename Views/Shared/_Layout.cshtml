@@ -17,8 +17,9 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -26,10 +27,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Assignment4_Elections</a>
+                <img id="navbar-logo" src="~/images/usf-logo-sm.png" asp-area="" asp-controller="Home" asp-action="Index">
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul id="navbar-links" class="nav navbar-nav navbar-right">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Candidates">Candidates</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Committees">Committees</a></li>
@@ -42,12 +43,16 @@
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
+    <div class="container content">
+        <!--  this button with javascript event on click to scroll all the way to the top of the page -->
+        <button onclick="scrollToTop()" id="button-up" title="Back to top">Back to top</button>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - Assignment4_Elections</p>
-        </footer>
+    </div>
+
+    <div class="footer">
+        | <span><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></span> 
+        | <span><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></span> 
+        |
     </div>
 
     <environment include="Development">
