@@ -39,7 +39,7 @@ namespace Assignment4_Elections.APIHandlerManager
         /// <returns></returns>
         public Candidates GetCandidates()
         {
-            string CANDIDATES_API_PATH = BASE_URL + "/candidates/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=name";
+            string CANDIDATES_API_PATH = BASE_URL + "/candidates/?sort_nulls_last=false&page=1&is_active_candidate=true&sort_null_only=false&per_page=20&sort=party_full&sort_hide_null=true";
             string candidatesData = "";
 
             Candidates candidates = null;
@@ -74,7 +74,7 @@ namespace Assignment4_Elections.APIHandlerManager
         }
         public Committees GetCommittees()
         {
-            string COMMITTEES_API_PATH = BASE_URL + "/committees/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=name";
+            string COMMITTEES_API_PATH = BASE_URL + "/committees/?sort_nulls_last=false&sort=name&page=1&sort_null_only=false&per_page=20&candidate_id=P60009115&candidate_id=P60009313&candidate_id=P60017647&candidate_id=P60017654&candidate_id=P00013565&candidate_id=P00011379&candidate_id=P00012468&candidate_id=P60017951&candidate_id=P60017084&candidate_id=H6MD35013&candidate_id=P60014164&candidate_id=S4AK00164&candidate_id=P60012648&candidate_id=P60022878&candidate_id=P60009578&candidate_id=P60017571&candidate_id=P60002375&candidate_id=S2CA00542&candidate_id=P60010501&candidate_id=P60013943&sort_hide_null=false";
             string committeesData = "";
 
             Committees committees = null;
@@ -109,7 +109,7 @@ namespace Assignment4_Elections.APIHandlerManager
         }
         public Filings GetFilings()
         {
-            string FILINGS_API_PATH = BASE_URL + "/filings/?sort_nulls_last=false&sort_null_only=false&sort_hide_null=false&page=1&sort=-receipt_date";
+            string FILINGS_API_PATH = BASE_URL + "/filings/?sort_nulls_last=false&sort=-receipt_date&page=1&sort_null_only=false&per_page=20&committee_id=C00625186&committee_id=C00582361&committee_id=C00063495&committee_id=C00711952&committee_id=C00702068&sort_hide_null=false";
             string filingsData = "";
 
             Filings filings = null;
