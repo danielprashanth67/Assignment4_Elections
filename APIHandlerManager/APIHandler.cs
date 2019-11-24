@@ -39,7 +39,7 @@ namespace Assignment4_Elections.APIHandlerManager
         /// <returns></returns>
         public Candidates GetCandidates()
         {
-            string CANDIDATES_API_PATH = BASE_URL + "/candidates/?sort_nulls_last=false&page=1&is_active_candidate=true&sort_null_only=false&per_page=20&sort=party_full&sort_hide_null=true";
+            string CANDIDATES_API_PATH = BASE_URL + "/candidates/?sort_nulls_last=false&page=1&is_active_candidate=true&sort_null_only=false&per_page=20&sort=party_full&sort_hide_null=true&candidate_id=P60009115&candidate_id=P60009313&candidate_id=P60017647&candidate_id=P60017654&candidate_id=P00013565&candidate_id=P00011379&candidate_id=P00012468&candidate_id=P60017951&candidate_id=P60017084&candidate_id=H6MD35013&candidate_id=P60014164&candidate_id=S4AK00164&candidate_id=P60012648&candidate_id=P60022878&candidate_id=P60009578&candidate_id=P60017571&candidate_id=P60002375&candidate_id=S2CA00542&candidate_id=P60010501&candidate_id=P60013943";
             string candidatesData = "";
 
             Candidates candidates = null;

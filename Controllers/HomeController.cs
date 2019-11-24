@@ -42,6 +42,7 @@ namespace Assignment4_Elections.Controllers
                 {
                     dbContext.Candidates.Add(item);
                 }
+
             }
             dbContext.SaveChanges();
 
@@ -62,10 +63,9 @@ namespace Assignment4_Elections.Controllers
 
                 }
 
-                }
 
-               dbContext.SaveChanges();
-            
+            }
+            dbContext.SaveChanges();
             foreach (var item in committees.results)
             {
                 Committee can = dbContext.Committees.First(a => a.committee_id == item.committee_id);
@@ -73,7 +73,9 @@ namespace Assignment4_Elections.Controllers
                 can.candidate_id = candi;
             }
 
+
             dbContext.SaveChanges();
+           
             return View(committees);
 
         }
