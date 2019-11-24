@@ -65,12 +65,15 @@ namespace Assignment4_Elections.Controllers
                 }
 
                dbContext.SaveChanges();
+            
             foreach (var item in committees.results)
-           {
-             var can = dbContext.Committees.First(a => a.committee_id == item.committee_id);
-             can.candidate_id = item.candidate_ids.ToString();
-           }
-           dbContext.SaveChanges();
+            {
+                Committee can = dbContext.Committees.First(a => a.committee_id == item.committee_id);
+                string candi = string.Join(",", item.candidate_ids);
+                can.candidate_id = candi;
+            }
+
+            dbContext.SaveChanges();
             return View(committees);
 
         }
