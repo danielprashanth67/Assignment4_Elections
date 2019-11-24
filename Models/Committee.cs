@@ -2,30 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment4_Elections.Models
 {
     public class Committee
     {
-        public string filing_frequency { get; set; }
         public string committee_type_full { get; set; }
-        public string last_file_date { get; set; }
         public string name { get; set; }
         public string state { get; set; }
-        public string affiliated_committee_name { get; set; }
-        public string designation_full { get; set; }
-        public string committee_type { get; set; }
         public string party_full { get; set; }
-        public string organization_type_full { get; set; }
+        [Key]
         public string committee_id { get; set; }
-        public string party { get; set; }
-        public string organization_type { get; set; }
-        public string first_file_date { get; set; }
-        public string designation { get; set; }
+        [ForeignKey("Candidate")]
+        public string candidate_id { get; set; }
+        [NotMapped]
         public List<string> candidate_ids { get; set; }
-        public List<int> cycles { get; set; }
-        public string treasurer_name { get; set; }
-        public string last_f1_date { get; set; }
+        public Candidate Candidate { get; set; }
+       
     }
 
     public class Committees

@@ -13,24 +13,22 @@
             <th>File Number</th>
             <th>Committee Id</th>
             <th>Last Updated</th>
-            <th>Candidate Id</th>
+            <th>Document Descprition</th>
             <th>Report Year</th>
-            <th>Total Disbursements</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.results)
         {
 
-            <tr>
+        <tr>
 
-                <td>@Html.DisplayFor(modelItem => item.file_number)</td>
-                <td>@Html.DisplayFor(modelItem => item.committee_id)</td>
-                <td>@Html.DisplayFor(modelItem => item.update_date)</td>
-                <td>@Html.DisplayFor(modelItem => item.candidate_id)</td>
-                <td>@Html.DisplayFor(modelItem => item.report_year)</td>
-                <td>@Html.DisplayFor(modelItem => item.total_disbursements)</td>
-            </tr>
+            <td>@Html.DisplayFor(modelItem => item.ending_image_number)</td>
+            <td>@Html.DisplayFor(modelItem => item.committee_id)</td>
+            <td>@Html.DisplayFor(modelItem => item.update_date)</td>
+            <td>@Html.DisplayFor(modelItem => item.document_description)</td>
+            <td>@Html.DisplayFor(modelItem => item.report_year)</td>
+        </tr>
 
         }
     </tbody>
