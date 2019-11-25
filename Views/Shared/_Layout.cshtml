@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
@@ -59,6 +59,8 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- load Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
@@ -73,9 +75,185 @@
                 crossorigin="anonymous"
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
 
+    <script>
+        // make sure we start axes at 0
+        Chart.scaleService.updateScaleDefaults('linear', {
+            ticks: {
+                min: 0
+            }
+        });
+
+
+        // data for the Donut Chart
+        data = {
+            datasets: [{
+                backgroundColor: ["#0066cc", "#e60000"],
+                data: [56, 44]
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Democratic',
+                'Republican'
+            ]
+        };
+
+        // Donut Chart.js
+        var myDoughnutChart = new Chart(document.getElementById("donutChart"), {
+            type: 'doughnut',
+            data: data,
+            // Options for this Donut Chart
+            options: {
+                title: {
+                    display: true,
+                    text: 'Top 10 by Party (in % of total)'
+                }
+            }
+        });
+
+
+        // Horizontal Bar Chart
+        new Chart(document.getElementById("horizontalBarChart"), {
+            type: 'horizontalBar',
+            data: {
+                labels: [
+                            "CLINTON, HILLARY [DEM]", 
+                            "TRUMP, DONALD J [REP]", 
+                            "SANDERS, BERNARD [DEM]", 
+                            "CRUZ, RAFAEL EDWARD [REP]",
+                            "CARSON, BENJAMIN [REP] ",
+                            "RUBIO, MARCO [REP]",
+                            "BUSH, JEB [REP]",
+                            "KASICH, JOHN R [REP]",
+                            "PAUL, RAND [REP]",
+                            "FIORINA, CARLY [REP]"
+                        ],
+                datasets: [
+                    {
+                        label: "Total funds raised (USD)",
+                        backgroundColor: [
+                                            "#0066cc", 
+                                            "#e60000", 
+                                            "#0066cc", 
+                                            "#e60000",
+                                            "#e60000",
+                                            "#e60000",
+                                            "#e60000",
+                                            "#e60000",
+                                            "#e60000",
+                                            "#e60000"
+                                        ],
+                        data: [ 
+                                585699061,
+                                350668435,
+                                237640609, 
+                                94338654,
+                                65091035,
+                                48331861,
+                                35491191,
+                                19692691,
+                                12458992,
+                                12211897
+                            ]
+                    }
+                ]
+                },
+                options: {
+                    legend: { display: false },
+                    title: {
+                    display: true,
+                    text: 'Total Funds Raised'
+                }
+            }
+        });
+
+
+        // data for the Donut Chart
+        data2008 = {
+            datasets: [{
+                backgroundColor: ["#0066cc", "#e60000"],
+                data: [64, 36]
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Democratic',
+                'Republican'
+            ]
+        };
+
+        // Donut Chart.js
+        var myDoughnutChart = new Chart(document.getElementById("donutChart2008"), {
+            type: 'doughnut',
+            data: data2008,
+            // Options for this Donut Chart
+            options: {
+                title: {
+                    display: true,
+                    text: 'Top 10 by Party (in % of total)'
+                }
+            }
+        });
+
+
+        // Horizontal Bar Chart
+        new Chart(document.getElementById("horizontalBarChart2008"), {
+            type: 'horizontalBar',
+            data: {
+                labels: [
+                            "OBAMA, BARACK [DEM]", 
+                            "MCCAIN, JOHN S. [REP]", 
+                            "CLINTON, HILLARY [DEM]", 
+                            "ROMNEY, MITT [REP]",
+                            "GIULIANI, RUDOLPH W. [REP]",
+                            "EDWARDS, JOHN [DEM]",
+                            "PAUL, RON [REP]",
+                            "RICHARDSON, BILL [DEM]",
+                            "DODD, CHRISTOPHER J [DEM]",
+                            "HUCKABEE, MIKE [REP]"
+                        ],
+                datasets: [
+                    {
+                        label: "Total funds raised (USD)",
+                        backgroundColor: [
+                                            "#0066cc", 
+                                            "#e60000", 
+                                            "#0066cc", 
+                                            "#e60000",
+                                            "#e60000",
+                                            "#0066cc",
+                                            "#e60000",
+                                            "#0066cc",
+                                            "#0066cc",
+                                            "#e60000"
+                                        ],
+                        data: [ 
+                                778642962,
+                                401537140,
+                                252235516, 
+                                113659805,
+                                66173879,
+                                62868872,
+                                35121860,
+                                24852093,
+                                18669473,
+                                16495625
+                            ]
+                    }
+                ]
+                },
+                options: {
+                    legend: { display: false },
+                    title: {
+                    display: true,
+                    text: 'Total Funds Raised'
+                }
+            }
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
