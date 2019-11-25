@@ -78,10 +78,10 @@ table > thead > tr {
 /* info-div class used to style html elements such as div and p that contain information */
 .info-div
 {
-    border: 3px solid #bfbfbf;
+    border: 2px solid #bfbfbf;
     border-radius: 8px;
     background-color: #ffffff;
-    padding: 24px;
+    padding: 24px 36px 10px 36px;
     line-height: 2;
     margin: 10px 0px;
     overflow: auto;
