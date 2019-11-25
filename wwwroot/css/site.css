@@ -135,3 +135,10 @@ table > thead > tr {
     color: #ffffff;
     opacity: 0.8; /*make it a little transparent*/
 }
+
+/* credit source span/p, italic font and smaller size (80% of what the normal font size would be) */
+.source-credit {
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+}
