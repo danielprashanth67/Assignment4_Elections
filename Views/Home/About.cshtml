@@ -12,7 +12,7 @@
     <div class="media-body">
         <br>
         <h3 class="media-heading">Art Nasekailo</h3>
-        Web-design (HTML and CSS). Basic JavaScript.
+        Front-end programming and web-design (HTML and CSS). Basic JavaScript and Chart.Js
     </div>
 </div>
 <hr/>
@@ -24,7 +24,7 @@
     <div class="media-body">
         <br>
         <h3 class="media-heading">Daniel Naguri</h3>
-        Data mining. Relational database design.
+        Back-end programming: handle API to retrieve data, generate SQL transactions and relational database design.
     </div>
 </div>
 <hr/>
@@ -41,6 +41,46 @@
 </div>
 <hr/>
 
-<p>
-    Additional information on the API used can be found at <a href="https://api.open.fec.gov/developers" target="_blank">Open Government Elections API</a>
-</p>
+<br>
+<br>
+<h4>Tools and technologies utilized in this project:</h4>
+
+<ul style="margin-top: 24px">
+    <li>User Interface</li>
+        <ul>
+            <li>HTML and CSS</li>
+            <li><a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap framework</a></li>
+            <li><a href="https://www.chartjs.org/" target="_blank">Chart.Js</a></li>
+        </ul>
+    <li>Back-end</li>
+        <ul>
+            <li>Model View Controller (MVC) from .NET framework</li>
+            <li>C#</li>
+            <li>Microsoft SQL</li>
+        </ul>
+    <li>Application Programming Interface (API)</li>
+        <ul>
+            <li>API provided by the <a href="https://api.open.fec.gov/developers" target="_blank">fec.gov</a></li>
+            <li>Code to handle this API is written in C#</li>
+        </ul>
+    <li>Deployment to the Cloud</li>
+        <ul>
+            <li><a href="https://azure.microsoft.com/en-us/" target="_blank">Microsoft Azure</a></li>
+            <li>SQL Database</li>
+        </ul>
+</ul>
+
+
+<div class="alert alert-warning" style="margin-top: 24px">
+    <strong>Note:</strong><br>
+    <p>
+        Primary and only data source for this project was Federal Election Commission database. We have found this data set on data.gov and decided to use for the last group assignment. Our goal was to use the FEC API which is a RESTful web service supporting full-text and field-specific searches on FEC data. Additionally, after pulling data via the API, we store data in the local SQL database and use both SQL and API to render view to the user.
+    </p>
+    <p>
+        For the scope of this project, we have focused on the candidate, committee and filing entities provided by the fec.gov. 
+    </p>
+    <br>
+    <p>
+        Additional information about the API used in this project can be found at <a href="https://api.open.fec.gov/developers" target="_blank">Open Government Elections API</a>
+    </p>
+</div>

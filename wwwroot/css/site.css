@@ -27,6 +27,7 @@ body {
 /* footer styling: just make sure it's 100% wide and text is center aligned horizontally and vertically (use padding) */
 .footer {
     margin: 0 auto;
+    margin-top: 24px;
     width: 100%;
     text-align: center;
     padding: 24px 0px;

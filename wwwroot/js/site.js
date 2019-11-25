@@ -11,7 +11,7 @@ window.onscroll = function() {scrollFunction()};
 // scrollFunction() is designed to determine if "Back to Top" button should be visible or hidden
 function scrollFunction() {
 	// show the button if user scrolled down more than 600px
-    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400)
         document.getElementById("button-up").style.display = "block";
     // otherwise, button should be hidden
     else 
