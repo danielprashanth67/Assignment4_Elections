@@ -19,6 +19,7 @@ namespace Assignment4_Elections.Controllers
         public HomeController(ElectionContext context)
         {
             dbContext = context;
+
         }
         public IActionResult Index()
         {
